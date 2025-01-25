@@ -43,6 +43,28 @@ def main():
                         player_choice = "Paper"
                     elif event.key == pygame.K_s:
                         player_choice = "Scissors"
+                    
+                    if player_choice:random.choice(choices)
+                    result = get_winner(player_choice, computer_choice)
+
+            screen.fill(WHITE)
+
+            if player_choice:
+                player_text = font.render(f"You chose: {player_choice}", True, BLACK)
+                computer_text = font.render(f"You chose: {computer_choice}", True, BLACK)
+                result_text = font.render(result, True, BLACK)
+                
+                screen.blit(player_text, (50, 50))
+                screen.blit(computer_text, (50, 100))
+                screen.blit(result_text, (50, 150))
+
+            pygame.display.flip()
+            pygame.time.Clock().tick(FPS)
+
+    pygame.quit()
+if __name__ == "__main__":
+    main()
+
 
  
 
